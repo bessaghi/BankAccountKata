@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Make deposit &amp; withdrawal operations">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/StatementPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Transaction.java" afterDir="false" />
+    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Print Statement">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/NotEnoughBalanceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" afterDir="false" />
@@ -26,8 +25,8 @@
       <list>
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,9 +46,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.AccountHandlerTest.balance_of_newly_created_account_must_be_zero.executor": "Run",
+    "JUnit.AccountHandlerTest.executor": "Run",
     "JUnit.AccountHandlerTest.make_deposit_into_account.executor": "Run",
     "JUnit.AccountHandlerTest.make_withdrawal_from_account.executor": "Run",
     "JUnit.AccountHandlerTest.print_account_statement.executor": "Run",
+    "JUnit.AccountHandlerTest.should_throw_exception_when_not_enough_money_to_withdrawal.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -77,8 +79,8 @@
       <recent name="fr.sg" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountHandlerTest.print_account_statement">
-    <configuration name="AccountHandlerTest.make_deposit_into_account" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AccountHandlerTest.should_throw_exception_when_not_enough_money_to_withdrawal">
+    <configuration name="AccountHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BankAccountKata" />
       <extension name="coverage">
         <pattern>
@@ -88,7 +90,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="fr.sg" />
       <option name="MAIN_CLASS_NAME" value="fr.sg.AccountHandlerTest" />
-      <option name="METHOD_NAME" value="make_deposit_into_account" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountHandlerTest.balance_of_newly_created_account_must_be_zero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BankAccountKata" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.sg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.sg" />
+      <option name="MAIN_CLASS_NAME" value="fr.sg.AccountHandlerTest" />
+      <option name="METHOD_NAME" value="balance_of_newly_created_account_must_be_zero" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,11 +143,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccountHandlerTest.should_throw_exception_when_not_enough_money_to_withdrawal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BankAccountKata" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.sg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.sg" />
+      <option name="MAIN_CLASS_NAME" value="fr.sg.AccountHandlerTest" />
+      <option name="METHOD_NAME" value="should_throw_exception_when_not_enough_money_to_withdrawal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AccountHandlerTest.should_throw_exception_when_not_enough_money_to_withdrawal" />
+        <item itemvalue="JUnit.AccountHandlerTest.balance_of_newly_created_account_must_be_zero" />
         <item itemvalue="JUnit.AccountHandlerTest.print_account_statement" />
+        <item itemvalue="JUnit.AccountHandlerTest" />
         <item itemvalue="JUnit.AccountHandlerTest.make_withdrawal_from_account" />
-        <item itemvalue="JUnit.AccountHandlerTest.make_deposit_into_account" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +184,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704980225988</updated>
-      <workItem from="1704980227089" duration="1203000" />
+      <workItem from="1704980227089" duration="1784000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -175,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704980773288</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Print Statement">
+      <option name="closed" value="true" />
+      <created>1704981470719</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704981470719</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +227,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init project" />
     <MESSAGE value="Make deposit &amp; withdrawal operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make deposit &amp; withdrawal operations" />
+    <MESSAGE value="Print Statement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Print Statement" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

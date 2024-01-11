@@ -23,6 +23,9 @@ public class Account {
     }
 
     public void retrieve(double amount) {
+        if (balance < amount) {
+            throw new NotEnoughBalanceException("You don't have enough balance in your account.");
+        }
         balance-= amount;
         transactions.add(Transaction.builder()
                 .operation(Operation.WITHDRAWAL)
@@ -30,5 +33,9 @@ public class Account {
                 .amount(amount)
                 .balance(balance)
                 .build());
+    }
+
+    public void retrieveAll() {
+        retrieve(balance);
     }
 }

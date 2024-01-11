@@ -19,6 +19,11 @@ public class AccountHandler implements AccountService {
     }
 
     @Override
+    public void withdrawalAll(Account account) {
+        account.retrieveAll();
+    }
+
+    @Override
     public String printStatement(Account account) {
         return statementPrinter.printStatement(account);
     }
