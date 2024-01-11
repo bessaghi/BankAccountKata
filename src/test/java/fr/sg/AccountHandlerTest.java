@@ -1,6 +1,5 @@
 package fr.sg;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,5 +30,17 @@ class AccountHandlerTest {
         accountHandler.withdrawal(account, 100);
 
         assertThat(account.getBalance()).isEqualTo(200);
+    }
+
+    @Test
+    void print_account_statement() {
+        accountHandler.deposit(account, 300);
+        accountHandler.withdrawal(account, 100);
+
+        String statement = accountHandler.printStatement(account);
+
+        assertThat(statement).isEqualTo("OPERATION | DATE | AMOUNT | BALANCE\n" +
+                "DEPOSIT | 2024-01-11 | 300.0 | 300.0\n" +
+                "WITHDRAWAL | 2024-01-11 | 100.0 | 200.0");
     }
 }

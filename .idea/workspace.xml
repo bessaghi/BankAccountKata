@@ -4,24 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Init project">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/fr/sg/AccountHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Make deposit &amp; withdrawal operations">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Operation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/StatementPrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fr/sg/AccountHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fr/sg/AccountHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -42,6 +48,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.AccountHandlerTest.make_deposit_into_account.executor": "Run",
+    "JUnit.AccountHandlerTest.make_withdrawal_from_account.executor": "Run",
+    "JUnit.AccountHandlerTest.print_account_statement.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -54,6 +62,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,7 +77,7 @@
       <recent name="fr.sg" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountHandlerTest.make_withdrawal_from_account">
+  <component name="RunManager" selected="JUnit.AccountHandlerTest.print_account_statement">
     <configuration name="AccountHandlerTest.make_deposit_into_account" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BankAccountKata" />
       <extension name="coverage">
@@ -101,8 +110,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccountHandlerTest.print_account_statement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BankAccountKata" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.sg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.sg" />
+      <option name="MAIN_CLASS_NAME" value="fr.sg.AccountHandlerTest" />
+      <option name="METHOD_NAME" value="print_account_statement" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AccountHandlerTest.print_account_statement" />
         <item itemvalue="JUnit.AccountHandlerTest.make_withdrawal_from_account" />
         <item itemvalue="JUnit.AccountHandlerTest.make_deposit_into_account" />
       </list>
@@ -123,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704980225988</updated>
-      <workItem from="1704980227089" duration="324000" />
+      <workItem from="1704980227089" duration="1203000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -141,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704980288099</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Make deposit &amp; withdrawal operations">
+      <option name="closed" value="true" />
+      <created>1704980773288</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704980773288</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +183,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init project" />
+    <MESSAGE value="Make deposit &amp; withdrawal operations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make deposit &amp; withdrawal operations" />
   </component>
 </project>
