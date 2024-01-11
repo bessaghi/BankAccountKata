@@ -1,5 +1,6 @@
-package fr.sg;
+package fr.sg.data;
 
+import fr.sg.exceptions.NotEnoughBalanceException;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -13,25 +14,24 @@ public class Account {
 
     public void add(double amount, String date) {
         balance+= amount;
+        addTransaction(Operation.DEPOSIT, date, amount);
+    }
+
+    private void addTransaction(Operation operation, String date, double amount) {
         transactions.add(Transaction.builder()
-                        .operation(Operation.DEPOSIT)
-                        .date(date)
-                        .amount(amount)
-                        .balance(balance)
+                .operation(operation)
+                .date(date)
+                .amount(amount)
+                .balance(balance)
                 .build());
     }
 
     public void retrieve(double amount, String date) {
         if (balance < amount) {
-            throw new NotEnoughBalanceException("You don't have enough balance in your account.");
+            throw new NotEnoughBalanceException();
         }
         balance-= amount;
-        transactions.add(Transaction.builder()
-                .operation(Operation.WITHDRAWAL)
-                .date(date)
-                .amount(amount)
-                .balance(balance)
-                .build());
+        addTransaction(Operation.WITHDRAWAL, date, amount);
     }
 
     public void retrieveAll(String date) {

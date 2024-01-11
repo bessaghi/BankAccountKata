@@ -1,4 +1,6 @@
-package fr.sg;
+package fr.sg.services;
+
+import fr.sg.data.Account;
 
 public class AccountHandler implements AccountService {
 

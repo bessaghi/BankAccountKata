@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Handle extreme cases">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/BankDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Transaction.java" afterDir="false" />
+    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Mock date">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/data/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/data/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/services/AccountHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/BankDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/services/BankDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/NotEnoughBalanceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/exceptions/NotEnoughBalanceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/data/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/StatementPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/services/StatementPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Transaction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/fr/sg/AccountHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fr/sg/AccountHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +31,7 @@
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -85,7 +89,7 @@
       <module name="BankAccountKata" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.sg.*" />
+          <option name="PATTERN" value="fr.sg.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,7 +104,7 @@
       <module name="BankAccountKata" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.sg.*" />
+          <option name="PATTERN" value="fr.sg.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,7 +120,7 @@
       <module name="BankAccountKata" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.sg.*" />
+          <option name="PATTERN" value="fr.sg.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,7 +136,7 @@
       <module name="BankAccountKata" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.sg.*" />
+          <option name="PATTERN" value="fr.sg.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,7 +152,7 @@
       <module name="BankAccountKata" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.sg.*" />
+          <option name="PATTERN" value="fr.sg.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -185,7 +189,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704980225988</updated>
-      <workItem from="1704980227089" duration="2917000" />
+      <workItem from="1704980227089" duration="3394000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -227,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704982151956</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Mock date">
+      <option name="closed" value="true" />
+      <created>1704983253841</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704983253841</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +250,8 @@
     <MESSAGE value="Make deposit &amp; withdrawal operations" />
     <MESSAGE value="Print Statement" />
     <MESSAGE value="Handle extreme cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handle extreme cases" />
+    <MESSAGE value="Mock date" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mock date" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
