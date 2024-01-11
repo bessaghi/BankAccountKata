@@ -2,15 +2,28 @@ package fr.sg;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.BDDMockito.given;
 
+@ExtendWith(MockitoExtension.class)
 class AccountHandlerTest {
 
-    private AccountHandler accountHandler = new AccountHandler();
+
+    private static final String A_DATE = "21/12/2023";
 
     private Account account;
+
+    @Mock
+    private BankDate bankDate;
+
+    @InjectMocks
+    private AccountHandler accountHandler;
 
     @BeforeEach
     void setUp() {
@@ -58,6 +71,7 @@ class AccountHandlerTest {
 
     @Test
     void print_account_statement() {
+        given(bankDate.now()).willReturn(A_DATE);
         accountHandler.deposit(account, 300);
         accountHandler.withdrawal(account, 100);
         accountHandler.withdrawalAll(account);
@@ -65,8 +79,8 @@ class AccountHandlerTest {
         String statement = accountHandler.printStatement(account);
 
         assertThat(statement).isEqualTo("OPERATION | DATE | AMOUNT | BALANCE\n" +
-                "DEPOSIT | 2024-01-11 | 300.0 | 300.0\n" +
-                "WITHDRAWAL | 2024-01-11 | 100.0 | 200.0\n" +
-                "WITHDRAWAL | 2024-01-11 | 200.0 | 0.0");
+                "DEPOSIT | 21/12/2023 | 300.0 | 300.0\n" +
+                "WITHDRAWAL | 21/12/2023 | 100.0 | 200.0\n" +
+                "WITHDRAWAL | 21/12/2023 | 200.0 | 0.0");
     }
 }

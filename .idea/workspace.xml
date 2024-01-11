@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Print Statement">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/NotEnoughBalanceException.java" afterDir="false" />
+    <list default="true" id="1c0d1625-8805-461d-a24b-dab2901efa44" name="Changes" comment="Handle extreme cases">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/sg/BankDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sg/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sg/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/fr/sg/AccountHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fr/sg/AccountHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +80,7 @@
       <recent name="fr.sg" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountHandlerTest.should_throw_exception_when_not_enough_money_to_withdrawal">
+  <component name="RunManager" selected="JUnit.AccountHandlerTest">
     <configuration name="AccountHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BankAccountKata" />
       <extension name="coverage">
@@ -161,10 +162,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AccountHandlerTest" />
+        <item itemvalue="JUnit.AccountHandlerTest.print_account_statement" />
         <item itemvalue="JUnit.AccountHandlerTest.should_throw_exception_when_not_enough_money_to_withdrawal" />
         <item itemvalue="JUnit.AccountHandlerTest.balance_of_newly_created_account_must_be_zero" />
-        <item itemvalue="JUnit.AccountHandlerTest.print_account_statement" />
-        <item itemvalue="JUnit.AccountHandlerTest" />
         <item itemvalue="JUnit.AccountHandlerTest.make_withdrawal_from_account" />
       </list>
     </recent_temporary>
@@ -184,7 +185,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704980225988</updated>
-      <workItem from="1704980227089" duration="1784000" />
+      <workItem from="1704980227089" duration="2917000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -218,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704981470719</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Handle extreme cases">
+      <option name="closed" value="true" />
+      <created>1704982151956</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704982151956</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +237,8 @@
     <MESSAGE value="Init project" />
     <MESSAGE value="Make deposit &amp; withdrawal operations" />
     <MESSAGE value="Print Statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print Statement" />
+    <MESSAGE value="Handle extreme cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handle extreme cases" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
